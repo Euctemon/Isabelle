@@ -159,7 +159,7 @@ proof -
   have reindex : "y = (\<Oplus>i\<in>{Suc k.. Suc k + l}. g (i - Suc k))"
     using finsum_reindex_nat g_def y_def by blast
   define h where "h = (\<lambda> i. if i \<le> k then f i else g (i - Suc k))"
-  have lower_k : "h \<in> {..k} \<rightarrow> gen_set R A"            (*to_k*)
+  have lower_k : "h \<in> {..k} \<rightarrow> gen_set R A"
     unfolding h_def using f_def by auto
   have upper_k : "h \<in> {Suc k..Suc k + l} \<rightarrow> gen_set R A"
     unfolding h_def using g_def by force
